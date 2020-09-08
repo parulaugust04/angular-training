@@ -21,6 +21,7 @@ export class CountControlComponent implements OnInit {
 
   startTimer() {
     if(this.currentTime && this.currentTime !==  this.counterForm.value.timer){
+      this.started = true;
       this.timer.emit({ timer: this.counterForm.value.timer, started: true , reset: false, inputChanged: true});
     } else {
       this.started = !this.started
