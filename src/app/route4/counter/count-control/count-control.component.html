@@ -1,0 +1,25 @@
+<form #f='ngForm' (ngSubmit)="startTimer()" >
+    <div class="form-group">
+        <label for="timer">Enter Time Limit: </label>
+        <input 
+            type="number"
+            id="timer" 
+            class="form-control" 
+            name="timer"
+            ngModel
+            #timer="ngModel"
+            required
+        >
+        <span *ngIf="!timer.valid && timer.touched" class="text-danger">Please enter a value!</span>
+    </div>
+    <button class="btn btn-primary" type="submit" [disabled]="!f.valid">Start/Pause</button>
+    <button class="btn btn-primary ml-3" (click)="reset()" [disabled]="!f.valid">reset</button>
+</form>
+<div class="play-pause">
+    <div *ngFor="let info of counterInfo" >
+        <div *ngIf="!info.start">
+            <span>Paused at </span>
+            <span>{{info.time}} </span>
+        </div>
+    </div>
+</div>

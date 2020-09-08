@@ -1,0 +1,8 @@
+<div 
+ *ngFor="let child of [].constructor(containerDivs); let i = index" 
+ [ngStyle]="{'height': getHeight(i), 'width': getWidth(i)}"
+ [ngClass]="{'v-middle': !i, 'box': true}">
+    <marquee *ngIf="!i">
+        Rotating Text
+    </marquee>
+</div>

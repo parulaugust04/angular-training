@@ -1,0 +1,17 @@
+<div 
+class="container"
+infiniteScroll
+[infiniteScrollDistance]="0"
+[infiniteScrollThrottle]="1000"
+(scrolled)="onScroll()"
+>
+    <div 
+    *ngFor="let child of [].constructor(dataSource); let i = index" 
+    [ngClass]="['box']"
+    >
+       <button (click)="onClick(i)">Button{{i+1}}</button> 
+    </div>
+    <div *ngIf="loading" [ngStyle]="{'margin':'auto'}">
+        <img src="assets/img/loading-icon.jpg" width="100">
+    </div>
+</div>

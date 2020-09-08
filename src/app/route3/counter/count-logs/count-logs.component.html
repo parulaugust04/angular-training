@@ -1,0 +1,5 @@
+<div *ngFor="let info of counterInfo">
+    <span *ngIf="info.start">Started at </span>
+    <span *ngIf="!info.start">Paused at </span>
+    <span>{{info.updatedAt | date:'medium' }} </span>
+</div>

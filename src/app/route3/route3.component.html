@@ -1,0 +1,22 @@
+<div class="fl-row border border-dark p-2">
+    <div class="fl-column border border-dark">
+        <div class=" mb-2 height-100 p-3">
+            <app-count-timer [timeUpdate] = "timerValueRcv" ></app-count-timer>
+        </div>
+    </div>
+    <div class="fl-column border border-dark">
+        <div class=" mb-2 height-100 p-3">
+            <app-count-control (timer)="startTimervalue($event)" [counterDetail]="counterInfo"></app-count-control>
+        </div>
+    </div>
+    <div class="fl-column border border-dark">
+        <div class=" height-100 p-3">
+            <app-count-logs [counterInfo]="counterInfo"></app-count-logs>
+        </div>
+    </div>
+    <div class="fl-column border border-dark">
+        <div class=" height-100 p-3">
+            <app-count-status [countInfo]="countInfo"></app-count-status>
+        </div>
+    </div>
+</div>

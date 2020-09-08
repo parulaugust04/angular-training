@@ -1,0 +1,15 @@
+.wrapper{
+    margin-top: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.active{
+    background-color: #00b9f5;
+    border-radius: 5px;
+}
+
+.navbar-light .navbar-nav .active>.nav-link {
+    color: white;;
+}

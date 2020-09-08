@@ -1,0 +1,34 @@
+<div class="container">
+    <div class="row">
+        <div class="col-10 text-right">
+            <button class="btn" [ngClass]="{'btn-primary': listView , 'btn-light': !listView}"
+                (click)="onChangeView('list')">List View</button>
+            <button class="btn ml-2" [ngClass]="{'btn-primary': !listView , 'btn-light': listView}"
+                (click)="onChangeView('grid')">Grid View</button>
+        </div>
+        <div class="col-2">
+            <select (change)="sort($event)" class="ml-auto">
+                <option value="" selected disabled hidden>Sort By</option>
+                <option value="name">Name</option>
+                <option value="low">Low to High Price</option>
+                <option value="high">High to Low Price</option>
+            </select>
+        </div>
+    </div>
+    <div class="row my-5" *ngIf="!isFetching">
+        <div class="col-sm-offset-2 py-2" *ngFor="let product of products"
+            [ngClass]="{'col-sm-3': !listView, 'col-sm-6': listView }">
+            <div class="product-container p-2">
+            <p><b>Name: </b>{{product.name}}</p>
+            <p><b>Price: </b>{{product.price}}</p>
+        </div>
+    </div>
+    </div>
+    <div class="row">
+        <p *ngIf="isFetching && !error">Loading...</p>
+        <div class="alert alert-danger" *ngIf="error">
+            <h1>An Error Occurred!</h1>
+            <p>{{ error }}</p>
+        </div>
+    </div>
+</div>

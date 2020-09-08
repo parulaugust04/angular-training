@@ -1,0 +1,15 @@
+<div>
+    <table class="table">
+      <thead>
+        <tr>
+          <th *ngFor="let header of data[0] | keys" (click)="sortTable(header)" scope="col" class="cursor-pointer">{{header | titlecase }}<span *ngIf="this.sortBy === header && this.sortOrder !== ''">({{this.sortOrder}})</span>
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let row of data">
+          <td *ngFor="let objKey of row | keys">{{ row[objKey] }} </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>

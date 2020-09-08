@@ -1,0 +1,8 @@
+.btn-primary:disabled{
+    cursor: not-allowed;
+}
+
+.play-pause{
+    max-height: 75px;
+    overflow-y: auto;
+}
